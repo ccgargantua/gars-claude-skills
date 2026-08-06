@@ -18,7 +18,7 @@ To resume: pick up item 1, or check `CONTEXT_LOGGING.md` for the latest entry be
 
 - [doc/skill-creation.md](doc/skill-creation.md) - the meta-skill used to write every other skill in this repo.
 - [doc/other-skills.md](doc/other-skills.md) - one-paragraph summary of every other skill.
-- [doc/project-structure.md](doc/project-structure.md) - what the claude-project-structure skill sets up, how this repo uses it, and how to apply it elsewhere.
+- [doc/claude-project-structure.md](doc/claude-project-structure.md) - what the claude-project-structure skill sets up, how this repo uses it, and how to apply it elsewhere.
 - [CONTEXT_LOGGING.md](CONTEXT_LOGGING.md) - dated history of what changed in this repo and why.
 - `doc/example-claude-project/` - not yet populated; will hold a worked example of this project structure in use.
 
@@ -42,6 +42,6 @@ This folder is the internal project doc set; the repo root also has a short publ
 └── doc/
     ├── skill-creation.md         detail on the meta-skill
     ├── other-skills.md           brief summary of the remaining skills
-    ├── project-structure.md      the claude-project-structure pattern, and how to use it
+    ├── claude-project-structure.md  the claude-project-structure pattern, and how to use it
     └── example-claude-project/   empty, reserved for a future worked example
 ```

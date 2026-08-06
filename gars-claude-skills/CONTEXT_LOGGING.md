@@ -17,4 +17,4 @@ Repo initialized as a Claude project per the `claude-project-structure` skill.
 
 Moved everything internal (CLAUDE.md, CONTEXT_LOGGING.md, README.md, doc/, skills/) into a `gars-claude-skills/` subfolder, and added a short public-facing README.md at repo root pointing into it, since the root README should read like an actual repo README rather than the internal project doc.
 
-- Added [doc/project-structure.md](doc/project-structure.md), explaining the claude-project-structure pattern, how this repo applies it, and how to reuse it elsewhere. Linked from the README TOC.
+- Added doc/claude-project-structure.md (initially named project-structure.md, renamed at the user's request), explaining the claude-project-structure pattern, how this repo applies it, and how to reuse it elsewhere. Linked from the README TOC.
