@@ -21,7 +21,7 @@ description: "Use when starting a new multi-session project, or when asked to se
     └── <topic>.md
 ```
 
-# README.md — four sections, in order
+# README.md - four sections, in order
 
 1. **Goal** - one paragraph, what the project is for.
 2. **Continue from here** - rewritten (not appended) whenever stale:

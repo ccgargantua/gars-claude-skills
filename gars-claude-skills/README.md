@@ -6,11 +6,11 @@ This repo open-sources my personal Claude Code skills and the project structure 
 
 ## Continue from here
 
-Status: initial structure is in place - skills copied in, doc pages written, CLAUDE.md rule added. `doc/example-claude-project/` is intentionally empty.
+Status: initial structure is in place - skills copied in, doc pages written, CLAUDE.md rule added. Skills resynced from the global skill set on 2026-08-17: fixed drift in `claude-project-structure` and `code-philosophy`, added `skill-refactoring`. `doc/example-claude-project/` is intentionally empty.
 
 Outstanding:
 1. Populate `doc/example-claude-project/` with a worked example of a project using this structure.
-2. Decide whether to add more skills as they're written, or keep this repo as a periodic snapshot.
+2. Decide whether to add more skills as they're written, or keep this repo as a periodic snapshot (swamp/swamp-getting-started stay excluded either way, see Project structure below).
 
 To resume: pick up item 1, or check `CONTEXT_LOGGING.md` for the latest entry before making changes.
 
@@ -38,6 +38,7 @@ This folder is the internal project doc set; the repo root also has a short publ
 │   ├── product-research/
 │   ├── professional-communication/
 │   ├── skill-creation/
+│   ├── skill-refactoring/
 │   └── tooling-research/
 └── doc/
     ├── skill-creation.md         detail on the meta-skill
@@ -45,3 +46,5 @@ This folder is the internal project doc set; the repo root also has a short publ
     ├── claude-project-structure.md  the claude-project-structure pattern, and how to use it
     └── example-claude-project/   empty, reserved for a future worked example
 ```
+
+`swamp` and `swamp-getting-started` are excluded from `skills/` on purpose: they reference an internal/company CLI and are not relevant to this project. Do not add them when syncing from the global skill set.

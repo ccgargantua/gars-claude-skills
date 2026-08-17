@@ -18,3 +18,13 @@ Repo initialized as a Claude project per the `claude-project-structure` skill.
 Moved everything internal (CLAUDE.md, CONTEXT_LOGGING.md, README.md, doc/, skills/) into a `gars-claude-skills/` subfolder, and added a short public-facing README.md at repo root pointing into it, since the root README should read like an actual repo README rather than the internal project doc.
 
 - Added doc/claude-project-structure.md (initially named project-structure.md, renamed at the user's request), explaining the claude-project-structure pattern, how this repo applies it, and how to reuse it elsewhere. Linked from the README TOC.
+
+## 2026-08-17
+
+Resynced project skills against the current global skill set (`~/.claude/skills/`), global files untouched.
+
+- `skills/claude-project-structure/SKILL.md`: fixed a stray em-dash that had crept into a heading.
+- `skills/code-philosophy/SKILL.md`: restored a missing "Principals" section (Principals/Minimalism/Strict Validation) that global had gained since the last sync.
+- `fact-checking`, `product-research`, `professional-communication`, `skill-creation`, `tooling-research`: already matched global, no changes.
+- Added `skills/skill-refactoring/` (new in global since the last sync), at the user's request. Documented in README's project structure tree and doc/other-skills.md.
+- Confirmed with the user that `swamp` and `swamp-getting-started` stay permanently excluded (internal/company tool, not relevant here) and recorded that as a standing rule in README rather than only in this log, so future syncs don't re-raise the question.

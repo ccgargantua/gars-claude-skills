@@ -7,4 +7,5 @@ Brief description of every skill in `skills/` other than `skill-creation` (cover
 - **fact-checking** - verifies claims, quotes, statements, or articles against sources searched in the current conversation. Never confirms or denies a claim from training data alone.
 - **product-research** - helps decide what to buy, at any budget, by comparing current options rather than recalling stale prices or specs from training data.
 - **professional-communication** - writes professional documents and messages in the user's own voice, calibrating formality to the audience and stakes of the specific task rather than defaulting to one tone.
+- **skill-refactoring** - audits existing skills against the skill-creation standard and brings non-compliant ones into compliance (Principals section, Example section, no em-dashes/emojis) without losing any original rule, example, or trigger phrase.
 - **tooling-research** - researches a specific software or infrastructure tool, API, or suite on request, confirming details against current documentation instead of assuming.
