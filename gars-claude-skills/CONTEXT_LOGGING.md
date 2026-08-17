@@ -28,3 +28,11 @@ Resynced project skills against the current global skill set (`~/.claude/skills/
 - `fact-checking`, `product-research`, `professional-communication`, `skill-creation`, `tooling-research`: already matched global, no changes.
 - Added `skills/skill-refactoring/` (new in global since the last sync), at the user's request. Documented in README's project structure tree and doc/other-skills.md.
 - Confirmed with the user that `swamp` and `swamp-getting-started` stay permanently excluded (internal/company tool, not relevant here) and recorded that as a standing rule in README rather than only in this log, so future syncs don't re-raise the question.
+
+Added a new `agents/` folder, ported from the 5 global coding agents (`~/.claude/agents/`), global files untouched.
+
+- Agents are a different artifact from skills: flat `agents/<name>.md` files with `name`/`description`/`tools`/`model` frontmatter, not a `SKILL.md`-per-folder structure. Confirmed placement (top-level `agents/`, flat) with the user before creating it.
+- Ported code-writer, code-reviewer, code-tester, code-auditor, dependency-installer. These form a pipeline: writer/reviewer/tester never install dependencies, they report the need; code-auditor renders an APPROVE/REFUSE verdict; dependency-installer only acts once it has an exact package spec, an auditor verdict, and explicit user sign-off, treated as independent gates.
+- Applied a Minimalism-only rewrite (per the user's global no-em-dash rule, using skill-refactoring's approach): swapped every em-dash for a comma or colon matching local grammar, left wording otherwise untouched. Did not add a Principals or Example section since those are skill-creation conventions for SKILL.md, not part of Claude Code's agent frontmatter format, at the user's direction.
+- Verified via word-level diff against each global source that no content changed beyond the em-dash swap. Also caught and fixed an over-eager first pass that had accidentally flattened three `→` arrows in dependency-installer.md into colons; restored them since arrows aren't covered by the no-em-dash rule.
+- Added `doc/agents.md`, linked from the README TOC. Updated README's project structure tree and CLAUDE.md's documentation rule to cover agents alongside skills.
