@@ -3,9 +3,9 @@ name: claude-project-structure
 description: "Use when starting a new multi-session project, or when asked to set up persistent project documentation, a knowledgebase, or context continuity for Claude/agents. Sets up README.md (goal, resume section, TOC, structure) + CONTEXT_LOGGING.md (dated changelog) + doc/ (one file per topic), plus CLAUDE.md/AGENTS.md rules to read/update them each session. Triggers on 'set up project docs', 'persistent context', 'project knowledgebase', 'contextual persistence', 'continue from here', 'session continuity', 'resumable project'."
 ---
 
-# Principals
+# Principles
 
-1. Principals - This list governs how the skill is followed. Re-check the final structure against every principal below before calling setup done.
+1. Principles - This list governs how the skill is followed. Re-check the final structure against every principle below before calling setup done.
 2. Minimalism - No em-dashes, no emojis, no filler. README and doc pages exist to be read under time pressure; every extra word costs the next reader time.
 3. Strict Validation - Never assume the project's unit of change, its topic breakdown, or what counts as "done." Ask the user when unclear instead of guessing.
 4. Degrees of Freedom - Before creating files or folders beyond the fixed skeleton below, confirm naming and scope with the user rather than inventing structure unprompted.

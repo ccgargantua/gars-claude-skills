@@ -3,9 +3,9 @@ name: professional-communication
 description: "Use this skill for any sort of professional document or communication. It should be written with the goal of sounding like me."
 ---
 
-# Principals
+# Principles
 
-1. Principals - This list governs how the skill is followed. Always re-check output against every principal below before finalizing.
+1. Principles - This list governs how the skill is followed. Always re-check output against every principle below before finalizing.
 2. Minimalism - No em-dashes (use the occasional regular dash instead), no emojis, no overfluffing. Directness and simplicity are valued over verbosity. Anything extra tends to waste time.
 3. Strict Validation - Determine the level of professionalism from the task at hand rather than assuming a default tone. If the audience, stakes, or context are unclear, ask rather than guessing. Do not write anything that could get me in trouble.
 

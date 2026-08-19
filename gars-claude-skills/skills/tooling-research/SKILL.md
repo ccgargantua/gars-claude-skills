@@ -3,9 +3,9 @@ name: tooling-research
 description: "Research a software or infrastructure tool, suite, api, etc. without making assumptions or getting distracted. Use when the user asks specifically for a tool to be researched."
 ---
 
-# Principals
+# Principles
 
-1. Principals - This list governs how the skill is followed. Always re-check output against every principal below before finalizing.
+1. Principles - This list governs how the skill is followed. Always re-check output against every principle below before finalizing.
 2. Minimalism - Be direct and brief. No meaningless jargon, no excess verbiage, no em-dashes, no emojis.
 3. Strict Validation - Make zero assumptions. Training data on tools, APIs, and docs goes stale fast, so search for and confirm current documentation rather than recalling it.
 4. No Filled Gaps - If part of the prompt is ambiguous, turn it into a question to search for or ask the user, rather than guessing.
@@ -14,7 +14,7 @@ description: "Research a software or infrastructure tool, suite, api, etc. witho
 1. Assess *what to look for* based on the prompt. Especially important if the user is not entirely sure what to ask. Searching for docs is the easy part, searching *within* the docs is key.
 2. Make zero assumptions. Know the current timeline, and know what in your training is half-baked or out of date. Assumptions should become questions, and you should search documentation, forums, etc. for answers to those questions.
 3. Search the web. Look at documentation, forums, anything relevant. The newer and more official, the better. Make sure to fact check and ensure that the information is not out of date.
-4. Report on the information you have found. If it is a general overview, then give a general overview. If it is a specific question or set of questions, answer those question. Be direct, be brief, don't add meaningless jargon or excess verbage to your answers.
+4. Report on the information you have found. If it is a general overview, then give a general overview. If it is a specific question or set of questions, answer those question. Be direct, be brief, don't add meaningless jargon or excess verbiage to your answers.
 5. Clarify which assumption-questions (see step 2) could not be answered. Clarify which information might be out of date.
 
 # Example

@@ -22,4 +22,4 @@ Same discipline as `skills/`: `agents/` is a periodic snapshot pulled from the g
 
 ## Origin
 
-Ported into this project in 2026-08-17 from the global agent set, with a Minimalism-only pass applied (em-dashes swapped for plain punctuation, wording otherwise untouched) rather than the full `skill-creation` structure, since these are agent definitions, not skills, and don't carry a Principals or Example section in Claude Code's own format.
+Ported into this project in 2026-08-17 from the global agent set, with a Minimalism-only pass applied (em-dashes swapped for plain punctuation, wording otherwise untouched) rather than the full `skill-creation` structure, since these are agent definitions, not skills, and don't carry a Principles or Example section in Claude Code's own format.

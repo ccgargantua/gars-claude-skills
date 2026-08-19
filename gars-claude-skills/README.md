@@ -6,11 +6,11 @@ This repo open-sources my personal Claude Code skills and the project structure 
 
 ## Continue from here
 
-Status: initial structure is in place - skills copied in, doc pages written, CLAUDE.md rule added. Skills resynced from the global skill set on 2026-08-17: fixed drift in `claude-project-structure` and `code-philosophy`, added `skill-refactoring`. Same day, added a new `agents/` folder holding the 5 global coding agents (code-writer, code-reviewer, code-tester, code-auditor, dependency-installer), each rewritten with a Minimalism-only pass (em-dashes removed, wording otherwise untouched). `doc/example-claude-project/` is intentionally empty.
+Status: structure is in place - skills copied in, agents ported, doc pages written, CLAUDE.md rule added. On 2026-08-19 the long-standing misspelling of "Principles" as "Principals" was corrected across every global skill and every copy and mention of it in this repo, and all 8 project skills were resynced so they now match `~/.claude/skills/` byte for byte. `agents/` remains intentionally divergent from global by em-dashes only. `doc/example-claude-project/` is intentionally empty.
 
 Outstanding:
 1. Populate `doc/example-claude-project/` with a worked example of a project using this structure.
-2. Decide whether to add more skills/agents as they're written, or keep this repo as a periodic snapshot (swamp/swamp-getting-started stay excluded either way, see Project structure below).
+2. Decide whether to add more skills/agents as they're written, or keep this repo as a periodic snapshot (swamp, swamp-getting-started, and american-sound stay excluded either way, see Project structure below).
 
 To resume: pick up item 1, or check `CONTEXT_LOGGING.md` for the latest entry before making changes.
 
@@ -55,4 +55,4 @@ This folder is the internal project doc set; the repo root also has a short publ
     └── example-claude-project/   empty, reserved for a future worked example
 ```
 
-`swamp` and `swamp-getting-started` are excluded from `skills/` on purpose: they reference an internal/company CLI and are not relevant to this project. Do not add them when syncing from the global skill set. `agents/` follows the same rule: only agents relevant to this project's own use are ported in, and the global `~/.claude/agents/` source is never written to from here.
+`swamp`, `swamp-getting-started`, and `american-sound` are excluded from `skills/` on purpose: they reference an internal/company CLI or an employer's internal systems and are not relevant to this project. Do not add them when syncing from the global skill set. `agents/` follows the same rule: only agents relevant to this project's own use are ported in, and the global `~/.claude/agents/` source is never written to from here.

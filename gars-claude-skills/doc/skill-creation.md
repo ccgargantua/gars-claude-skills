@@ -6,12 +6,12 @@ Location: `skills/skill-creation/SKILL.md`
 
 The meta-skill. Used whenever a new SKILL.md needs to be written for an LLM. Every other skill in this repo was built by following it, and it is written in a way that demonstrates its own rules (it is, itself, a skill about writing skills).
 
-## Principals it enforces on any skill it produces
+## Principles it enforces on any skill it produces
 
-1. **Principals** - every skill must open with a numbered principals list telling the agent how to follow it. This is non-negotiable and recursive: skill-creation carries its own principals list too.
+1. **Principles** - every skill must open with a numbered principles list telling the agent how to follow it. This is non-negotiable and recursive: skill-creation carries its own principles list too.
 2. **Minimalism** - no extra wording, no em-dashes, no emojis. Tokens are a limited resource.
 3. **Strict Validation** - any technical or factual statement in a skill must be verifiable. Assumptions are forbidden. Where the skill would otherwise guess, it must instead ask the user.
-4. **Degrees of Freedom** - the author must identify every action the skill lets the model take unsupervised, then confirm with the user which of those degrees of freedom are acceptable and which need to be constrained. This principal does not need to be passed down into the skill being written; it governs the authoring process itself.
+4. **Degrees of Freedom** - the author must identify every action the skill lets the model take unsupervised, then confirm with the user which of those degrees of freedom are acceptable and which need to be constrained. This principle does not need to be passed down into the skill being written; it governs the authoring process itself.
 
 ## Required output shape
 
@@ -19,4 +19,4 @@ Every skill produced under skill-creation must include a worked example: a fake 
 
 ## How to use it
 
-Invoke `skill-creation` any time a new skill is needed, or an existing skill is being revised. Check the resulting SKILL.md against all four principals and the worked-example requirement before treating it as finished.
+Invoke `skill-creation` any time a new skill is needed, or an existing skill is being revised. Check the resulting SKILL.md against all four principles and the worked-example requirement before treating it as finished.
