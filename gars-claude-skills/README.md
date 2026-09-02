@@ -6,7 +6,7 @@ This repo open-sources my personal Claude Code skills and the project structure 
 
 ## Continue from here
 
-Status: structure is in place - skills copied in, agents ported, doc pages written, CLAUDE.md rule added. On 2026-08-19 the long-standing misspelling of "Principles" as "Principals" was corrected across every global skill and every copy and mention of it in this repo, and all 8 project skills were resynced so they now match `~/.claude/skills/` byte for byte. `agents/` remains intentionally divergent from global by em-dashes only. `doc/example-claude-project/` is intentionally empty.
+Status: structure is in place - skills copied in, agents ported, doc pages written, CLAUDE.md rules added. On 2026-09-02 the shared principles were replaced with a new three-item list (no assumptions, know when a task is complete, density), `skill-creation` and `skill-refactoring` were rewritten at the global level against the `documentation` skill's standard and resynced here, and the principles block was added to `CLAUDE.md` so a consumer without the org instructions still inherits them. The previously unlogged `documentation` skill is now recorded in the structure tree and `doc/other-skills.md`. All 9 project skills match `~/.claude/skills/` byte for byte. `agents/` remains intentionally divergent from global by em-dashes only. `doc/example-claude-project/` is intentionally empty.
 
 Outstanding:
 1. Populate `doc/example-claude-project/` with a worked example of a project using this structure.
@@ -29,12 +29,13 @@ This folder is the internal project doc set; the repo root also has a short publ
 
 ```
 .
-├── CLAUDE.md                     rule to keep README/CONTEXT_LOGGING/doc current
+├── CLAUDE.md                     shared principles + rule to keep README/CONTEXT_LOGGING/doc current
 ├── README.md                     this file
 ├── CONTEXT_LOGGING.md            dated changelog
 ├── skills/                       one folder per skill, each a SKILL.md (+ optional references)
 │   ├── claude-project-structure/
 │   ├── code-philosophy/
+│   ├── documentation/
 │   ├── fact-checking/
 │   ├── product-research/
 │   ├── professional-communication/

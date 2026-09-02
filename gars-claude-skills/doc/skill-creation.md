@@ -6,12 +6,22 @@ Location: `skills/skill-creation/SKILL.md`
 
 The meta-skill. Used whenever a new SKILL.md needs to be written for an LLM. Every other skill in this repo was built by following it, and it is written in a way that demonstrates its own rules (it is, itself, a skill about writing skills).
 
-## Principles it enforces on any skill it produces
+`skill-refactoring` audits existing skills against it. See [other-skills.md](other-skills.md).
 
-1. **Principles** - every skill must open with a numbered principles list telling the agent how to follow it. This is non-negotiable and recursive: skill-creation carries its own principles list too.
-2. **Minimalism** - no extra wording, no em-dashes, no emojis. Tokens are a limited resource.
-3. **Strict Validation** - any technical or factual statement in a skill must be verifiable. Assumptions are forbidden. Where the skill would otherwise guess, it must instead ask the user.
-4. **Degrees of Freedom** - the author must identify every action the skill lets the model take unsupervised, then confirm with the user which of those degrees of freedom are acceptable and which need to be constrained. This principle does not need to be passed down into the skill being written; it governs the authoring process itself.
+## Shared principles, and why skills do not restate them
+
+The three principles governing all output live in [CLAUDE.md](../CLAUDE.md), which is in context every turn. A skill that repeats them pays that token cost on every turn it loads and changes no behavior, so `skill-creation` forbids restating them. It quotes the canonical wording only so an author can recognize a restatement when auditing.
+
+This is a change from the earlier standard, which required every skill to open with its own numbered principles list. Any repo that ships these skills to a machine without the org instructions must carry the principles block in its own CLAUDE.md, because a consumer inherits nothing otherwise.
+
+## What the skill enforces on any skill it produces
+
+- No restated shared principles.
+- No command, flag, path, or API behavior stated without verification in the authoring conversation. Unverified facts become questions to the user.
+- Every consequential action gated in frontmatter where a field can enforce it (`disable-model-invocation`, `allowed-tools`, `user-invocable`, `paths`, `context`). Constraints no field can express stay as body rules.
+- Degrees of freedom confirmed with the user before drafting.
+- A `# Rules` section near the top, and a `# Example` section at the end.
+- Under 150 lines preferred, 500 hard maximum. Bulk moves to `references/`.
 
 ## Required output shape
 
@@ -19,4 +29,4 @@ Every skill produced under skill-creation must include a worked example: a fake 
 
 ## How to use it
 
-Invoke `skill-creation` any time a new skill is needed, or an existing skill is being revised. Check the resulting SKILL.md against all four principles and the worked-example requirement before treating it as finished.
+Invoke `skill-creation` any time a new skill is needed, or an existing skill is being revised. Check the resulting SKILL.md against the enforcement list above and the worked-example requirement before treating it as finished. Then test it in a fresh session: run 2 or 3 target prompts with and without the skill and compare, since authoring-session context masks gaps a clean session exposes.

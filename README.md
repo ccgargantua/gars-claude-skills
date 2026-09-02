@@ -8,11 +8,14 @@ This project was made using the [project creation skill](./gars-claude-skills/do
 
 As remarkable a technology AI is, it is quite good at slowing itself down and, even worse, slowing you down. Claude tends to pollute its own context with repetitive mistakes, filler text, and reading content that it has already processed in the past. These skills are written with the attention of addressing those pain points directly.
 
-All of these skills were made using the [skill-creation skill](gars-claude-skills/doc/skill-creation.md). This skill streamlines the copying of my core principals when working with LLMs:
+Three principles govern everything the skills produce:
 
-1. **Principals govern the skill** - every skill states, up front, how it wants to be followed.
-2. **Minimalism** - cut the filler. No em-dashes, no emojis, no padding. The context window and the user's time are precious resources. Everything must be as dense as it is comprehensive.
-3. **Strict validation** - if it can't be verified, it doesn't get stated as fact. Ask instead of guessing every time, zero exceptions.
-4. **Degrees of freedom** - decide up front what the model is allowed to do unsupervised, and confirm it with me.
+1. **Never assume anything.** Turn every assumption into a question.
+2. **Know when a task is complete.** Don't extend scrutiny to infinity in a perfectionist loop.
+3. **Density.** LLM tokens and the user's time are precious resources. Responses should be as dense as possible without sacrificing any technical detail. Every extra character, word, and sentence is a waste.
+
+The skills deliberately do not restate those principles. They live in [gars-claude-skills/CLAUDE.md](gars-claude-skills/CLAUDE.md), which Claude loads on every turn, so repeating them inside a skill would cost tokens per turn and change nothing. If you adopt these skills elsewhere, copy that principles block into the CLAUDE.md of wherever they land, or they inherit nothing.
+
+All of these skills were made using the [skill-creation skill](gars-claude-skills/doc/skill-creation.md), which also fixes the parts of a skill no principle can enforce: consequential actions gated in frontmatter rather than prose, degrees of freedom confirmed with me before drafting, and a worked example in every skill.
 
 Licensed under [MIT](LICENSE).

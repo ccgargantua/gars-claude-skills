@@ -6,12 +6,24 @@ argument-hint: "[what the skill should do]"
 
 This file is the standard for every skill in this collection. skill-refactoring audits against it.
 
-# Shared principles (canonical wording)
+# Rules
 
-Every skill inherits these at runtime from the org instructions and the global CLAUDE.md, which are always in context. Do NOT restate them inside a new skill; restating is a per-turn token cost with no behavior change.
+1. Never restate the shared principles inside a skill. See "Shared principles".
+2. Never state a command, flag, path, or API behavior that was not verified in the authoring conversation. Unverified facts become questions to the user.
+3. Gate every consequential action in frontmatter wherever a field can enforce it. See "Frontmatter".
+4. Confirm with the user which degrees of freedom the skill keeps before drafting it.
+5. Keep a line only if removing it would cause mistakes.
 
-1. Minimalism - No em-dashes, no emojis, no filler. A loaded skill body is a recurring cost every turn. Keep a line only if removing it would cause mistakes.
-2. Strict Validation - Never state a technical fact (command, flag, API behavior, price, spec) that has not been verified in this conversation. Unknowns become questions to the user, never gap-fills from training data.
+# Shared principles
+
+Every skill inherits these at runtime from the org instructions and the global CLAUDE.md, which are always in context. Do NOT restate them inside a new skill; restating is a per-turn token cost with no behavior change. Reproduced here in canonical wording so an author can recognize a restatement, not so it can be copied:
+
+> Respond according to principles - This list governs how output is produced. Re-check against every principle below before finalizing.
+> 1. Never assume anything and to turn every assumption into a question.
+> 2. Know when a task is complete. Don't extend scrutiny to infinity in an perfectionist loop
+> 3. LLM tokens and the user's time are precious resources, and the responses should be as dense as possible without sacrificing any technical details. Every extra character, word, and sentence is a waste.
+
+A repo that ships skills outside this machine carries the same block in its own CLAUDE.md, because a consumer without the org instructions inherits nothing.
 
 # Structure
 
@@ -38,7 +50,7 @@ Gate side effects with frontmatter, not prose, wherever a field can enforce the 
 
 List every consequential action the new skill can take, propose gates, and confirm with the user which freedoms the skill keeps. A constraint no field can express (e.g. "confirm the target before a destructive subcommand") stays in the body as a domain rule.
 
-# Body rules
+# Body
 
 1. Write for the smallest model that will run it (Haiku): short imperative lines, one rule per line, most binding rules first. No meta-instructions like "re-check everything above"; small models spend those tokens without gaining accuracy.
 2. State what to do, not how or why. If a reason is essential, one clause: "Use X because Y."
