@@ -1,14 +1,70 @@
 ---
 name: skill-creation
-description: "Create a comprehensive skill in the style of a claude SKILL.md for use by an LLM. Use when asked to create a skill."
+description: "Create a Claude Code skill (SKILL.md) to the current house standard. Use when asked to create a skill, write a skill, generate a SKILL.md, make a slash command, or turn repeated instructions or a CLAUDE.md section into a skill."
+argument-hint: "[what the skill should do]"
 ---
 
-When creating a skill, use the following principles:
-1. Principles - Principles are a vital part of every skill. They describe to the agent how the skill should be followed. Every skill should include a list of principles, similar to this one. Some of these principles should be in every skill. This principle, the principle of principles, is one of them.
-2. Minimalism - No extra wording, no em-dashes, no emojis. Tokens are a precious resource and should be respected as such. LLMs do not care about fancy formatting, it is not necessary and is wasteful. This principle should be shared by the skill you are writing.
-3. Strict Validation - If a skill provides technical information objective statements, these MUST BE VALIDATED! Assumptions SHOULD NOT EVER BE MADE! Instead, they should be replaced with questions for the user. Do not fill in gaps or blanks, instead, ask the user to fill in those blanks for you. Do not rely on training data for information you cannot confirm with 100% confidence. This principle should be shared by the skill you are writing.
-4.  Degrees of Freedom - It is important to tie strict validation into the process of following this principle. Humans must be held accountable for LLM output. As such, permitting unwanted degrees of freedom to an LLM is an offense of the highest degree. Identify the actions that a model will need to be performed when it uses a skill, and evaluate which degrees of freedom will be necessary versus which will not. Verify with the user which are acceptable, and which are not. This skill does NOT need to be shared by the skill you are writing.
+This file is the standard for every skill in this collection. skill-refactoring audits against it.
 
-Adhering to those principles takes the highest priority. It is vital that all are accounted for in your final skill, and you should double check to be sure, adjust as necessary to ensure the principles are addressed.
+# Shared principles (canonical wording)
 
-Each skill should also contain an example of the skill being used. To do this, create a fake question by the user, and then use the very skill you have developed to generate a response to that question. The prompter will review this example and provide you with instructions on how to improve and tweak the skill as necessary. This skill itself is an example of how to create a skill.
+Every skill inherits these at runtime from the org instructions and the global CLAUDE.md, which are always in context. Do NOT restate them inside a new skill; restating is a per-turn token cost with no behavior change.
+
+1. Minimalism - No em-dashes, no emojis, no filler. A loaded skill body is a recurring cost every turn. Keep a line only if removing it would cause mistakes.
+2. Strict Validation - Never state a technical fact (command, flag, API behavior, price, spec) that has not been verified in this conversation. Unknowns become questions to the user, never gap-fills from training data.
+
+# Structure
+
+```
+skill-name/
+  SKILL.md        (under 150 lines preferred, 500 hard max)
+  references/     (optional detail, loaded on demand)
+  scripts/        (optional, executed via ${CLAUDE_SKILL_DIR}, never loaded as context)
+```
+
+# Frontmatter
+
+The description is the only text Claude sees when deciding whether to load the skill. Key use case first, then "Use when" with the literal phrases users type. Combined description plus when_to_use limit: 1,536 characters. If a sibling skill overlaps, state what this one is NOT for.
+
+Gate side effects with frontmatter, not prose, wherever a field can enforce the constraint:
+
+| Skill can trigger                        | Set                            |
+|------------------------------------------|--------------------------------|
+| deploy, send, commit, delete, publish    | disable-model-invocation: true |
+| work needing only specific tools         | allowed-tools                  |
+| background knowledge, never a command    | user-invocable: false          |
+| work relevant only to certain files      | paths (globs)                  |
+| long noisy work that pollutes context    | context: fork                  |
+
+List every consequential action the new skill can take, propose gates, and confirm with the user which freedoms the skill keeps. A constraint no field can express (e.g. "confirm the target before a destructive subcommand") stays in the body as a domain rule.
+
+# Body rules
+
+1. Write for the smallest model that will run it (Haiku): short imperative lines, one rule per line, most binding rules first. No meta-instructions like "re-check everything above"; small models spend those tokens without gaining accuracy.
+2. State what to do, not how or why. If a reason is essential, one clause: "Use X because Y."
+3. Include only non-obvious content: domain gotchas, house conventions, exact commands. Never restate default Claude behavior or the shared principles.
+4. Domain-specific constraints go under a "# Rules" heading near the top, worded for the domain.
+5. Add a "# Gotchas" section when the domain has known traps. It is the highest-value content in a skill.
+6. Move bulky material (API tables, long references) to references/ and link it from the body.
+7. End with a "# Example" section: one realistic user message and the response produced by applying the skill. Concrete examples are what small models imitate best.
+
+# Authoring process
+
+1. Ask the user, in one round: purpose, the phrases they will use to trigger it, every consequential action it may take, and any facts you cannot verify yourself.
+2. Draft frontmatter and body per the rules above.
+3. Verify every command, flag, and fact stated in the skill in this conversation, or leave it as an explicit question to the user.
+4. Final check: description contains the user's trigger phrases; no em-dashes or emojis; within line budget; side effects gated in frontmatter; Rules and Example sections present.
+5. Show the draft to the user for review, then have them test in a fresh session: run 2 or 3 target prompts with the skill and without it, and compare. Authoring-session context masks gaps a clean session exposes.
+
+# Example
+
+User: "Make me a skill for writing SQL migrations at work."
+
+Skill applied, one round of questions before drafting:
+
+"Three things before I write it:
+1. Trigger phrases: do you say 'migration', 'schema change', or something else? The description needs your exact words.
+2. Consequential actions: should the skill ever run migrations, or only write the files? If it can run them, I'll set disable-model-invocation: true so it only fires when you invoke it.
+3. Facts I can't verify: your migration file naming convention and which database engine."
+
+After answers: draft the skill with a Rules section for the naming convention, a Gotchas section for engine-specific traps the user confirms, an Example, and the agreed frontmatter gates. Then: "Test it in a fresh session with 2 or 3 real migration requests, with and without the skill, and tell me where it misfires."

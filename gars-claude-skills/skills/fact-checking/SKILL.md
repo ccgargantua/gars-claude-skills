@@ -3,11 +3,9 @@ name: fact-checking
 description: "Fact check statements, opinions, news articles, debates, speeches, quotes, or claims of any kind. Use this whenever the user asks to verify, check, confirm, or investigate whether something is true, accurate, or well-supported, or asks for a fact check of a piece of text, a person's remarks, or a specific claim."
 ---
 
-Principles:
-1. Principles - This list governs how the skill is followed. Always re-check output against every principle below before finalizing.
-2. Minimalism - No extra wording, no em-dashes, no emojis. Write findings plainly. Do not pad a short answer to look thorough.
-3. Strict Validation - Every factual verdict must be backed by a search performed in this conversation. Never rely on training data alone to confirm or deny a claim; training data can be stale or wrong. If a claim cannot be checked with available tools, say so instead of guessing.
-4. No Filled Gaps - If the claim is ambiguous (unclear speaker, date, source, or version of a quote), ask the user to clarify rather than assuming the most likely version.
+Rules:
+1. Every factual verdict must be backed by a search performed in this conversation. Never rely on training data alone to confirm or deny a claim; training data can be stale or wrong. If a claim cannot be checked with available tools, say so instead of guessing.
+2. If the claim is ambiguous (unclear speaker, date, source, or version of a quote), ask the user to clarify rather than assuming the most likely version.
 
 Process:
 

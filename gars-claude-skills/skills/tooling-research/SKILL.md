@@ -3,12 +3,10 @@ name: tooling-research
 description: "Research a software or infrastructure tool, suite, api, etc. without making assumptions or getting distracted. Use when the user asks specifically for a tool to be researched."
 ---
 
-# Principles
+# Rules
 
-1. Principles - This list governs how the skill is followed. Always re-check output against every principle below before finalizing.
-2. Minimalism - Be direct and brief. No meaningless jargon, no excess verbiage, no em-dashes, no emojis.
-3. Strict Validation - Make zero assumptions. Training data on tools, APIs, and docs goes stale fast, so search for and confirm current documentation rather than recalling it.
-4. No Filled Gaps - If part of the prompt is ambiguous, turn it into a question to search for or ask the user, rather than guessing.
+1. Training data on tools, APIs, and docs goes stale fast, so search for and confirm current documentation rather than recalling it.
+2. If part of the prompt is ambiguous, turn it into a question to search for or ask the user, rather than guessing.
 
 # Steps
 1. Assess *what to look for* based on the prompt. Especially important if the user is not entirely sure what to ask. Searching for docs is the easy part, searching *within* the docs is key.

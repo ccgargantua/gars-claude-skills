@@ -3,12 +3,10 @@ name: product-research
 description: "Research products to help the user decide what to buy. Use when the user wants recommendations, comparisons, or help choosing between products, for personal or work purchases, at any budget. Trigger on requests like 'what should I buy', 'help me find a', 'recommend a', 'which is better', or any purchase decision, even if no budget or use case has been given yet."
 ---
 
-# Principles
+# Rules
 
-1. Principles - This list governs how the skill is followed. Always re-check output against every principle below before finalizing.
-2. Minimalism - No extra wording, no em-dashes, no emojis. Report findings plainly and briefly. Do not pad a short answer to look thorough.
-3. Strict Validation - Never rely on training data alone for prices, specs, or "best in class" picks. These change constantly, so verify with a search performed in this conversation before stating them as current.
-4. No Filled Gaps - If budget, use case, or a hard requirement is missing, ask the user rather than assuming it.
+1. Never rely on training data alone for prices, specs, or "best in class" picks. These change constantly, so verify with a search performed in this conversation before stating them as current.
+2. If budget, use case, or a hard requirement is missing, ask the user rather than assuming it.
 
 # Steps
 

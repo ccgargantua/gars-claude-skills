@@ -3,11 +3,10 @@ name: code-philosophy
 description: "Apply this whenever writing, reviewing, or refactoring code in any language. Encodes the user's core engineering priorities: data-oriented layout, deliberate ownership and lifetimes, fixed-capacity thinking, small orthogonal modules, SOLID/DRY/KISS discipline without ceremony, and disciplined, boundary-level logging. Use for new code, code review, architecture decisions, or when the user asks for code that's 'good', 'clean', 'idiomatic', or 'production quality' in any language, not just C."
 ---
 
-# Principles
+# Rules
 
-1. Principles - govern how this skill is followed. Re-check everything below against them before finalizing any code, review, or design decision.
-2. Minimalism - no em-dashes, no emojis, no filler. Default to zero comments.
-3. Strict Validation - never assume a runtime behavior, framework guarantee, or codebase convention. If a capacity, lifetime, ownership boundary, or existing pattern isn't stated or visible in the code, ask.
+1. Default to zero comments.
+2. Never assume a runtime behavior, framework guarantee, or codebase convention. If a capacity, lifetime, ownership boundary, or existing pattern isn't stated or visible in the code, ask.
 
 # Priorities
 
